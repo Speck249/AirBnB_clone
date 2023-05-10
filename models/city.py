@@ -2,7 +2,8 @@
 """
 City Model
 """
-from models import BaseModel
+from models.base_model import BaseModel
+
 
 class City(BaseModel):
     """City Instance
@@ -10,7 +11,6 @@ class City(BaseModel):
     Att:
         state_id (str): state Id
         name (str): City name
-
-        """
+    """
 
         state_id, name = "", ""
