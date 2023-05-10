@@ -2,7 +2,8 @@
 """
 Place Model
 """
-from models import BaseModel
+from models.base_model import BaseModel
+
 
 class Place(BaseModel):
     """Place Instance
@@ -19,8 +20,8 @@ class Place(BaseModel):
         latitude (float): latitude
         longitude (float): longitude
         amenity_ids (list): list of amenities
-
     """
+
     city_id, user_id = "", ""
     name, description = "", ""
     number_rooms, number_bathrooms = 0, 0
