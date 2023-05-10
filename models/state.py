@@ -2,13 +2,14 @@
 """
 State Class
 """
-from models import BaseModel
+from models.base_model import BaseModel
+
 
 class State(BaseModel):
     """State Instance
 
     Att:
         name (str): state name
-
     """
+
     name = ""
