@@ -2,14 +2,14 @@
 """
 Amenity Model
 """
-from models import BaseModel
+from models.base_model import BaseModel
 
-class City(BaseModel):
+
+class Amenity(BaseModel):
     """Amenity Instance
 
     Att:
         name (str): amenity name
-
-        """
+    """
 
         name = ""
