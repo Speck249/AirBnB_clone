@@ -5,7 +5,7 @@ Review Model
 from models.base_model import BaseModel
 
 
-class City(BaseModel):
+class Review(BaseModel):
     """Review Instance
 
     Att:
