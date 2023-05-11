@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""
-State Class
-"""
+"""Module presents class State."""
 from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """State Instance
+    """Class inherits from BaseModel.
+    Handles state instances.
 
     Att:
         name (str): state name
