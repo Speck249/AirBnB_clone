@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Module presents class User."""
+"""
+User class
+"""
 from models.base_model import BaseModel
 
 

@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Module presents class City."""
+"""
+City Model
+"""
 from models.base_model import BaseModel
 
 

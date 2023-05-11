@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Module presents class State."""
+"""
+State Class
+"""
 from models.base_model import BaseModel
 
 
