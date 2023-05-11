@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""
-City Model
-"""
+"""Module presents class City."""
 from models.base_model import BaseModel
 
 
 class City(BaseModel):
-    """City Instance
+    """Class inherits from BaseModel.
+    Handles city instances.
 
     Att:
         state_id (str): state Id
