@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""
-User class
-"""
+"""Module presents class User."""
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """Instance of a User
+    """Class inherits from BaseModel.
+    Handles user instances.
 
     Att:
         email (str): email address
