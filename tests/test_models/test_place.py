@@ -3,6 +3,8 @@
 class Place."""
 import unittest
 from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
+from models import storage
 from models.place import Place
 import time
 from datetime import datetime

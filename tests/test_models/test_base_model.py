@@ -3,6 +3,9 @@
 class BaseModel."""
 import unittest
 from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
+from models import storage
+import uuid
 import time
 from datetime import datetime
 

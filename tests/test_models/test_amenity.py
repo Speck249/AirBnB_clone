@@ -4,8 +4,10 @@ Amenity class."""
 import unittest
 from models.base_model import BaseModel
 from models.amenity import Amenity
-import time
 from datetime import datetime
+import time
+from models.engine.file_storage import FileStorage
+from models import storage
 
 
 class TestAmenity(unittest.TestCase):
