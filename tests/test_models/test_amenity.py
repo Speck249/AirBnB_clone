@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module presents unittests for
-class Amenity."""
+Amenity class."""
 import unittest
 from models.base_model import BaseModel
 from models.amenity import Amenity
