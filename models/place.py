@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""
-Place Model
-"""
+"""Module presents class Place."""
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """Place Instance
+    """Class inherits from BaseModel.
+    Handles Place Instances.
 
     Att:
         city_id (str): city Id
