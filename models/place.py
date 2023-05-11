@@ -2,12 +2,7 @@
 """
 Place Model
 """
-<<<<<<< HEAD
-from models import BaseModel
-=======
 from models.base_model import BaseModel
-
->>>>>>> d6106ffb420be867ae15e410a0841f35099b0380
 
 class Place(BaseModel):
     """Place Instance
@@ -24,13 +19,8 @@ class Place(BaseModel):
         latitude (float): latitude
         longitude (float): longitude
         amenity_ids (list): list of amenities
-<<<<<<< HEAD
 
     """
-=======
-    """
-
->>>>>>> d6106ffb420be867ae15e410a0841f35099b0380
     city_id, user_id = "", ""
     name, description = "", ""
     number_rooms, number_bathrooms = 0, 0

@@ -3,8 +3,7 @@
 import uuid
 from datetime import datetime
 import time
-from models import storage
-
+import models
 
 class BaseModel():
     """Empty class created."""
@@ -40,7 +39,8 @@ class BaseModel():
         """Method updates attribute updated_at."""
 
         self.updated_at = datetime.now()
-        storage.save()
+        models.storage.new(self)
+        models.storage.save()
 
     def to_dict(self):
         """Method returns dictionary representation."""
@@ -49,9 +49,9 @@ class BaseModel():
 
         dict_rep = self.__dict__.copy()
         dict_rep["__class__"] = self.__class__.__name__
-        dict_rep["created_at"] = dict_rep[created_at].strftime\
+        dict_rep["created_at"] = self.created_at.strftime\
            ("%Y-%m-%dT%H:%M:%S.%f")
-        dict_rep["updated_at"] = dict_rep[updated_at].strftime\
+        dict_rep["updated_at"] = self.updated_at.strftime\
            ("%Y-%m-%dT%H:%M:%S.%f")
 
         return dict_rep
