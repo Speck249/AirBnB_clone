@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""
-Review Model
-"""
+"""Module presents class Review."""
 from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """Review Instance
+    """Class inherits from BaseModel.
+    Handles review instances.
 
     Att:
         place_id (str): Place Id
