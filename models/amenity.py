@@ -13,4 +13,4 @@ class Amenity(BaseModel):
         name (str): amenity name
     """
 
-        name = ""
+    name = ""
