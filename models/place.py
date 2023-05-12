@@ -4,7 +4,10 @@ Place Class
 """
 from models.base_model import BaseModel
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bacd9bbf2117e1367a14d62bac0ad1ae0f155107
 class Place(BaseModel):
     """Class inherits from BaseModel.
     Handles Place Instances.
@@ -21,8 +24,13 @@ class Place(BaseModel):
         latitude (float): latitude
         longitude (float): longitude
         amenity_ids (list): list of amenities
+<<<<<<< HEAD
     """
 
+=======
+
+    """
+>>>>>>> bacd9bbf2117e1367a14d62bac0ad1ae0f155107
     city_id, user_id = "", ""
     name, description = "", ""
     number_rooms, number_bathrooms = 0, 0
