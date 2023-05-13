@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """Unit test suite for Place class."""
 import unittest
+import models
 from models.base_model import BaseModel
 from models.place import Place
-import datetime
+from datetime import datetime
 import time
 
 
@@ -14,13 +15,6 @@ class TestPlace(unittest.TestCase):
     def test_subclass_inheritance(self):
         """Assert subclass inheritance from base class."""
         self.assertTrue(issubclass(Place, BaseModel))
-
-    def test_for_polymorphism(self):
-        """Assert interchangeability between base & subclass."""
-        b =  BaseModel()
-        assert isinstance(Place(73.756233), BaseModel)
-        assert not isinstance(Place(73.756233), float)
-        assert not isinstance(b, Place)
 
     def test_subclass_attributes_exist(self):
         """Assert subclass attributes exist."""
@@ -35,29 +29,84 @@ class TestPlace(unittest.TestCase):
         self.assertTrue(hasattr(self.obj, 'latitude'))
         self.assertTrue(hasattr(self.obj, 'longitude'))
         self.assertTrue(hasattr(self.obj, 'amenity_ids'))
+
+    def test_id_attribute_exists(self):
+        """Assert inherited attribute is present."""
         self.assertTrue(hasattr(self.obj, 'id'))
         self.assertTrue(hasattr(self.obj, 'created_at'))
         self.assertTrue(hasattr(self.obj, 'updated_at'))
 
+
     def test_subclass_attribute_type(self):
         """Assert subclass attribute types."""
-        msg = "instance type error."
-        self.assertIsInstance(self.obj.city_id, str, msg)
-        self.assertIsInstance(self.obj.user_id, str, msg)
-        self.assertIsInstance(self.obj.name, str, msg)
-        self.assertIsInstance(self.obj.description, str, msg)
-        self.assertIsInstance(self.obj.number_rooms, int, msg)
-        self.assertIsInstance(self.obj.number_bathrooms, int, msg)
-        self.assertIsInstance(self.obj.max_guest, int, msg)
-        self.assertIsInstance(self.obj.price_by_night, int, msg)
-        self.assertIsInstance(self.obj.latitude, float, msg)
-        self.assertIsInstance(self.obj.longitude, float, msg)
-        self.assertIsInstance(self.obj.amenity_ids, list, msg)
-        self.assertIsInstance(self.obj.id, str, msg)
-        self.assertIsInstance(self.obj.created_at,
-                      datetime.datetime, msg)
-        self.assertIsInstance(self.obj.updated_at,
-                      datetime.datetime, msg)
+        self.assertIsInstance(self.obj.city_id, str)
+        self.assertIsInstance(self.obj.user_id, str)
+        self.assertIsInstance(self.obj.name, str)
+        self.assertIsInstance(self.obj.description, str)
+        self.assertIsInstance(self.obj.number_rooms, int)
+        self.assertIsInstance(self.obj.number_bathrooms, int)
+        self.assertIsInstance(self.obj.max_guest, int)
+        self.assertIsInstance(self.obj.price_by_night, int)
+        self.assertIsInstance(self.obj.latitude, float)
+        self.assertIsInstance(self.obj.longitude, float)
+        self.assertIsInstance(self.obj.amenity_ids, list)
+        self.assertIsInstance(self.obj.id, str)
+        self.assertEqual(datetime, type(self.obj.created_at))
+        self.assertEqual(datetime, type(self.obj.updated_at))
+
+    def test_inherited_uuid(self):
+        """Assert generated id is unique."""
+        obj_p = Place()
+        p_obj = Place()
+        self.assertNotEqual(obj_p, p_obj)
+
+    def test_save(self):
+        obj_p = Place()
+        time.sleep(0.12)
+        initial_update = obj_p.update_at
+        obj_p.save()
+        self.assertLess(initial_update, obj_p.updated_at)
+
+    def test_to_dict_keys(self):
+        """Assert accuracy of keys inside dict"""
+        obj_p = Place()
+        self.assertIn("__class__", obj_p.to_dict())
+        self.assertIn("id", obj_p.to_dict())
+        self.assertIn("created_at", obj_p.to_dict())
+        self.assertIn("updated_at", obj_p.to_dict())
+
+    def test_to_dict_attributes(self):
+        """Assert attribute values within dict."""
+        obj_p = Place()
+        obj_p.name = "My First Model"
+        obj_p.my_number = 89
+        self.assertEqual("My First Model", obj_p.name)
+        self.assertIn("my_number", obj_p.to_dict())
+
+    def test_to_dict(self):
+        """Assert expected method output."""
+        msg = "Unexpected output."""
+        obj_p = Place()
+        ts = datetime.today()
+        ts_iso = ts.isoformat()
+        obj_p.id = "74cb9cb3-bb94-438b-af2b-7889aef86a8d"
+        obj_p.created_at = ts
+        obj_p.updated_at = ts
+        test_dict = {
+            "__class__": "Place",
+            "id": "74cb9cb3-bb94-438b-" \
+            "af2b-7889aef86a8d",
+            "created_at": ts,
+            "updated_at": ts,
+        }
+        self.assertDictEqual(test_dict, obj_p.to_dict(), msg)
+
+    def test_for_polymorphism(self):
+        """Assert interchangeability between base & subclass."""
+        b =  BaseModel()
+        assert isinstance(Place(73.756233), BaseModel)
+        assert not isinstance(Place(73.756233), float)
+        assert not isinstance(b, Place)
 
     def test_subclass_exceptions(self):
         """Assert exception handling."""
@@ -66,6 +115,3 @@ class TestPlace(unittest.TestCase):
             place.longitude = "longitude type error"
         except Exception as e:
             assert isinstance(e, TypeError)
-
-if __name__ == '__main__':
-    unittest.main()
