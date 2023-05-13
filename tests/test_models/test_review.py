@@ -14,7 +14,7 @@ class TestReview(unittest.TestCase):
 
     def test_subclass_inheritance(self):
         """Assert subclass inheritance from base class."""
-        self.assertTrue(issubclass(review, BaseModel))
+        self.assertTrue(issubclass(Review, BaseModel))
 
     def test_subclass_attributes_exist(self):
         """Assert subclass attributes exist."""
@@ -46,7 +46,7 @@ class TestReview(unittest.TestCase):
     def test_save(self):
         obj_r = Review()
         time.sleep(0.12)
-        initial_update = obj_r.update_at
+        initial_update = obj_r.updated_at
         obj_r.save()
         self.assertLess(initial_update, obj_r.updated_at)
 
@@ -70,18 +70,18 @@ class TestReview(unittest.TestCase):
         """Assert expected method output."""
         msg = "Unexpected output."""
         obj_r = Review()
+        obj_r.id = "74cb9cb3"
         ts = datetime.today()
-        ts_iso = ts.isoformat()
-        obj_r.id = "74cb9cb3-bb94-438b-af2b-7889aef86a8d"
         obj_r.created_at = ts
         obj_r.updated_at = ts
+        ts_iso = ts.isoformat()
         test_dict = {
             "__class__": "Review",
-            "id": "74cb9cb3-bb94-438b-" \
-            "af2b-7889aef86a8d",
-            "created_at": ts,
-            "updated_at": ts,
+            "id": "74cb9cb3",
+            "created_at": ts_iso,
+            "updated_at": ts_iso,
         }
+
         self.assertDictEqual(test_dict, obj_r.to_dict(), msg)
 
     def test_for_polymorphism(self):
