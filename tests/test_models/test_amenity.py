@@ -51,8 +51,8 @@ class TestAmenity(unittest.TestCase):
     def test_basemodel_uuid(self):
         """Assert generated id is unique."""
         obj_a = Amenity()
-        obj_b = Amenity()
-        self.assertNotEqual(obj_a, obj_b)
+        a_obj = Amenity()
+        self.assertNotEqual(obj_a, a_obj)
 
     def test_save(self):
         obj_a = Amenity()
