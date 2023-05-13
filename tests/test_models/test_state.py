@@ -29,7 +29,7 @@ class TestState(unittest.TestCase):
     def test_subclass_attribute_type(self):
         """Assert subclass attribute types."""
         self.assertIsInstance(self.obj.name, str)
-        self.assertIsInstance(self.obj.id, str, msg)
+        self.assertIsInstance(self.obj.id, str)
         self.assertEqual(datetime, type(self.obj.created_at))
         self.assertEqual(datetime, type(self.obj.updated_at))
 
