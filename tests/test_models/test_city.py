@@ -18,7 +18,7 @@ class TestCity(unittest.TestCase):
 
     def test_name_attribute_exists(self):
         """Assert subclass attribute is present."""
-         self.assertTrue(hasattr(self.obj, 'state_id'))
+        self.assertTrue(hasattr(self.obj, 'state_id'))
 
     def test_name_attribute_exists(self):
         """Assert subclass attribute is present."""
@@ -65,7 +65,7 @@ class TestCity(unittest.TestCase):
     def test_save(self):
         obj_c = City()
         time.sleep(0.12)
-        initial_update = obj_c.update_at
+        initial_update = obj_c.updated_at
         obj_c.save()
         self.assertLess(initial_update, obj_c.updated_at)
 
@@ -89,18 +89,18 @@ class TestCity(unittest.TestCase):
         """Assert expected method output."""
         msg = "Unexpected output."""
         obj_c = City()
+        obj_c.id = "74cb9cb3"
         ts = datetime.today()
-        ts_iso = ts.isoformat()
-        obj_c.id = "74cb9cb3-bb94-438b-af2b-7889aef86a8d"
         obj_c.created_at = ts
         obj_c.updated_at = ts
+        ts_iso = ts.isoformat()
         test_dict = {
             "__class__": "City",
-            "id": "74cb9cb3-bb94-438b-" \
-            "af2b-7889aef86a8d",
-            "created_at": ts,
-            "updated_at": ts,
+            "id": "74cb9cb3",
+            "created_at": ts_iso,
+            "updated_at": ts_iso,
         }
+
         self.assertDictEqual(test_dict, obj_c.to_dict(), msg)
 
     def test_for_polymorphism(self):
