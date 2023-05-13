@@ -54,7 +54,7 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(datetime, type(self.obj.created_at))
         self.assertEqual(datetime, type(self.obj.updated_at))
 
-    def test_inherited_uuid(self):
+    def test_inherited_id(self):
         """Assert generated id is unique."""
         obj_p = Place()
         p_obj = Place()
