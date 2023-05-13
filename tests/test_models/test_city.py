@@ -56,7 +56,7 @@ class TestCity(unittest.TestCase):
         """Assert subclass attribute types."""
         self.assertEqual(datetime, type(self.obj.updated_at))
 
-    def test_inherited_uuid(self):
+    def test_inherited_id(self):
         """Assert generated id is unique."""
         obj_c = City()
         c_obj = City()
