@@ -48,7 +48,7 @@ class TestUser(unittest.TestCase):
     def test_save(self):
         obj_u = User()
         time.sleep(0.12)
-        initial_update = obj_u.update_at
+        initial_update = obj_u.updated_at
         obj_u.save()
         self.assertLess(initial_update, obj_u.updated_at)
 
@@ -72,19 +72,19 @@ class TestUser(unittest.TestCase):
         """Assert expected method output."""
         msg = "Unexpected output."""
         obj_u = User()
+        obj_u.id = "74cb9cb3"
         ts = datetime.today()
-        ts_iso = ts.isoformat()
-        obj_u.id = "74cb9cb3-bb94-438b-af2b-7889aef86a8d"
         obj_u.created_at = ts
         obj_u.updated_at = ts
+        ts_iso = ts.isoformat()
         test_dict = {
             "__class__": "User",
-            "id": "74cb9cb3-bb94-438b-" \
-            "af2b-7889aef86a8d",
-            "created_at": ts,
-            "updated_at": ts,
+            "id": "74cb9cb3",
+            "created_at": ts_iso,
+            "updated_at": ts_iso,
         }
-        self.assertDictEqual(test_dict, obj_u.to_dict(), msg)
+
+        self.assertDictEqual(obj_u.to_dict(), test_dict, msg)
 
     def test_for_polymorphism(self):
         """Assert interchangeability between base & subclass."""
