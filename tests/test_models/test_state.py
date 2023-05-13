@@ -42,7 +42,7 @@ class TestState(unittest.TestCase):
     def test_save(self):
         obj_s = State()
         time.sleep(0.12)
-        initial_update = obj_s.update_at
+        initial_update = obj_s.updated_at
         obj_s.save()
         self.assertLess(initial_update, obj_s.updated_at)
 
@@ -66,18 +66,18 @@ class TestState(unittest.TestCase):
         """Assert expected method output."""
         msg = "Unexpected output."""
         obj_s = State()
+        obj_s.id = "74cb9cb3"
         ts = datetime.today()
-        ts_iso = ts.isoformat()
-        obj_s.id = "74cb9cb3-bb94-438b-af2b-7889aef86a8d"
         obj_s.created_at = ts
         obj_s.updated_at = ts
+        ts_iso = ts.isoformat()
         test_dict = {
             "__class__": "State",
-            "id": "74cb9cb3-bb94-438b-" \
-            "af2b-7889aef86a8d",
-            "created_at": ts,
-            "updated_at": ts,
+            "id": "74cb9cb3",
+            "created_at": ts_iso,
+            "updated_at": ts_iso,
         }
+
         self.assertDictEqual(test_dict, obj_s.to_dict(), msg)
 
     def test_for_polymorphism(self):
