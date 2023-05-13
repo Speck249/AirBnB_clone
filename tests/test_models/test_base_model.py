@@ -13,13 +13,14 @@ class TestBaseModel(unittest.TestCase):
 
     def test_basemodel_instantiation(self):
         """Assert parent class constructor."""
-        unique_id = str(uuid.uuid4())
-        iso_ts = datetime.today().isoformat()
+        unique_id = "74cb9cb3"
+        ts = datetime.today()
+        iso_ts = ts.isoformat()
         obj_b = BaseModel(id=unique_id, created_at=iso_ts,
                   updated_at=iso_ts)
         self.assertEqual(obj_b.id, unique_id)
-        self.assertEqual(obj_b.created_at, iso_ts)
-        self.assertEqual(obj_b.updated_at, iso_ts)
+        self.assertEqual(obj_b.created_at, ts)
+        self.assertEqual(obj_b.updated_at, ts)
 
     def test_uuid_exists(self):
         """Assert base_model has public instance id."""
@@ -54,7 +55,7 @@ class TestBaseModel(unittest.TestCase):
     def test_save(self):
         obj_b = BaseModel()
         time.sleep(0.12)
-        initial_update = obj_b.update_at
+        initial_update = obj_b.updated_at
         obj_b.save()
         self.assertLess(initial_update, obj_b.updated_at)
 
@@ -68,7 +69,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_to_dict_attributes(self):
         """Assert attribute values within dict."""
-        obj_b = Amenity()
+        obj_b = BaseModel()
         obj_b.name = "My First Model"
         obj_b.my_number = 89
         self.assertEqual("My First Model", obj_b.name)
@@ -78,18 +79,18 @@ class TestBaseModel(unittest.TestCase):
         """Assert expected method output."""
         msg = "Unexpected output."""
         obj_b = BaseModel()
+        obj_b.id = "74cb9cb3"
         ts = datetime.today()
-        ts_iso = ts.isoformat()
-        obj_b.id = "74cb9cb3-bb94-438b-af2b-7889aef86a8d"
         obj_b.created_at = ts
         obj_b.updated_at = ts
+        ts_iso = ts.isoformat()
         test_dict = {
             "__class__": "BaseModel",
-            "id": "74cb9cb3-bb94-438b-" \
-            "af2b-7889aef86a8d",
-            "created_at": ts,
-            "updated_at": ts,
+            "id": "74cb9cb3",
+            "created_at": ts_iso,
+            "updated_at": ts_iso,
         }
+
         self.assertDictEqual(test_dict, obj_b.to_dict(), msg)
 
 if __name__ == '__main__':
