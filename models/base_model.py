@@ -5,6 +5,7 @@ from datetime import datetime
 import time
 import models
 
+
 class BaseModel():
     """Empty class created."""
 
@@ -13,7 +14,7 @@ class BaseModel():
 
         Args:
             args: non-keyworded argument list.
-            kwargs: keyworded argument list
+            kwargs: keyworded argument list.
         """
 
         if kwargs != {} and kwargs is not None:
@@ -21,8 +22,9 @@ class BaseModel():
                 if key != "__class__":
                     setattr(self, key, value)
                 elif key == "created_at" or key == "updated_at":
-                    value = datetime.strptime(kwargs[key], 
+                    value = datetime.strptime(kwargs[key],
                           "%Y-%m-%dT%H:%M:%S.%f")
+
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
@@ -53,6 +55,4 @@ class BaseModel():
            ("%Y-%m-%dT%H:%M:%S.%f")
         dict_rep["updated_at"] = self.updated_at.strftime\
            ("%Y-%m-%dT%H:%M:%S.%f")
-
         return dict_rep
-
