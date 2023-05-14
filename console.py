@@ -18,7 +18,7 @@ class HBNBCommand(cmd.Cmd):
     Class inherits from cmd.Cmd."""
 
     intro = 'Welcome to the hbnb shell.'
-    prompt = '(hbnb) '
+    prompt = ' (hbnb) '
 
     __classes = {
         "BaseModel": BaseModel,
