@@ -3,7 +3,6 @@
 import uuid
 import models
 from datetime import datetime
-import time
 
 class BaseModel():
     """Empty class created."""
@@ -32,7 +31,7 @@ class BaseModel():
     def __str__(self):
         """Method prints string representation."""
 
-        return ("[<{}>] (<{}>) <{}>".
+        return ("[{}] ({}) {}".
                 format(self.__class__.__name__,
                        self.id, self.__dict__))
 
@@ -40,6 +39,7 @@ class BaseModel():
         """Method updates attribute updated_at."""
 
         self.updated_at = datetime.now()
+        models.storage.new(self)
         models.storage.save()
 
     def to_dict(self):
