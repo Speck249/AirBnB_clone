@@ -31,7 +31,7 @@ class BaseModel():
     def __str__(self):
         """Method prints string representation."""
 
-        return ("[<{}>] (<{}>) <{}>".
+        return ("[{}] ({}) {}".
                 format(self.__class__.__name__,
                        self.id, self.__dict__))
 
