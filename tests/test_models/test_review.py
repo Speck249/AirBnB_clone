@@ -32,7 +32,7 @@ class TestReview(unittest.TestCase):
         """Assert subclass attribute types."""
         self.assertIsInstance(self.obj.place_id, str)
         self.assertIsInstance(self.obj.user_id, str)
-        self.assertIsInstance(self.obj.text, str)        
+        self.assertIsInstance(self.obj.text, str)
         self.assertIsInstance(self.obj.id, str)
         self.assertEqual(datetime, type(self.obj.created_at))
         self.assertEqual(datetime, type(self.obj.updated_at))
@@ -44,6 +44,7 @@ class TestReview(unittest.TestCase):
         self.assertNotEqual(obj_r, r_obj)
 
     def test_save(self):
+        """Assert save() method output."""
         obj_r = Review()
         time.sleep(0.12)
         initial_update = obj_r.updated_at
@@ -51,7 +52,7 @@ class TestReview(unittest.TestCase):
         self.assertLess(initial_update, obj_r.updated_at)
 
     def test_to_dict_keys(self):
-        """Assert accuracy of keys inside dict"""
+        """Assert accuracy of keys."""
         obj_r = Review()
         self.assertIn("__class__", obj_r.to_dict())
         self.assertIn("id", obj_r.to_dict())
@@ -59,7 +60,7 @@ class TestReview(unittest.TestCase):
         self.assertIn("updated_at", obj_r.to_dict())
 
     def test_to_dict_attributes(self):
-        """Assert attribute values within dict."""
+        """Assert attribute values."""
         obj_r = Review()
         obj_r.name = "My First Model"
         obj_r.my_number = 89
@@ -67,7 +68,7 @@ class TestReview(unittest.TestCase):
         self.assertIn("my_number", obj_r.to_dict())
 
     def test_to_dict(self):
-        """Assert expected method output."""
+        """Assert expected to_dict() method output."""
         msg = "Unexpected output."""
         obj_r = Review()
         obj_r.id = "74cb9cb3"
