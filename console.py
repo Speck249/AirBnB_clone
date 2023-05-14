@@ -33,6 +33,10 @@ class HBNBCommand(cmd.Cmd):
     def _precmd(self, line):
         pass
 
+    def emptyline(self):
+        """Overrides the emptyline"""
+        pass
+
     def do_create(self, line):
         """Creates new instance of BaseModel."""
 
@@ -146,5 +150,5 @@ class HBNBCommand(cmd.Cmd):
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HBNBCommand().cmdloop()
