@@ -17,6 +17,7 @@ Clone this repository & proceed to run the console:
 -- git clone https://github.com/.../AirBnB_clone.git
 
 Here's what you'll find in the repo:
+
 |           Modules             |                       Description                            |
 |-------------------------------|:-------------------------------------------------------------|
 | console.py                    | contains entry point of the command interpreter              |
@@ -38,7 +39,18 @@ Here's what you'll find in the repo:
 | test_user.py                  | Unit test suite for user subclass.                           |
 | test_file_storage.py          | Unit test suite for user subclass.                           |
 
-And these are the commands of the command interpreter:
+How it works: After running the console module(console.py), the user will gain access to the command interpreter
+either in **Interactive** or **Non-Interactive** mode. In interactive mode, the user will encounter a prompt - (hbnb)
+indicating the shell program is ready to accept input. In this case, the user is expected to insert the correct
+command which will invoke some action to be executed. Note that a new prompt will appear to accept user input until
+the program is terminated. 
+
+In non-interactive mode, there won't be any prompt to interact with. Instead, the user will
+pipe in his/her input and won't be prompted for a new input until another command is piped into program execution.
+For clear depiction of both modes, please refer to the 'Test' section of this file.
+
+Here are the commands of the command interpreter:
+
 |  **Methods** |          **Description**                            |
 |--------------|:----------------------------------------------------|
 | **create**   | Create new instances of a given class.              |
@@ -49,13 +61,10 @@ And these are the commands of the command interpreter:
 | **destroy**  | Deletes an instance.                                |
 | **help**     | Returns information of a given command.             |
 | **EOF/quit** | Exits the program                                   |
-
-The shell program is designed to operate in **Interactive** and **Non-Interactive** mode. In Interactive
-Mode the user is expected to input commands following the console's prompt - (hbnb). Once the action invoked
-by the user's input has been executed, the prompt will appear again until the user exits the program. While
-in non-interactive mode, the user will pipe his/her input at the start of the program where no prompt will appear.
 ## Tests
 ---
+##Developed with
+Ubuntu 14.04 & Python 3.4
 ## Authors
 Jeffrey Kirigo - jeffreykirigo75@gmail.com
 Rediet Kifle - redietkfle@gmail.com
