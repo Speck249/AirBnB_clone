@@ -63,6 +63,7 @@ class TestCity(unittest.TestCase):
         self.assertNotEqual(obj_c, c_obj)
 
     def test_save(self):
+        """Assert save() method output."""
         obj_c = City()
         time.sleep(0.12)
         initial_update = obj_c.updated_at
@@ -70,7 +71,7 @@ class TestCity(unittest.TestCase):
         self.assertLess(initial_update, obj_c.updated_at)
 
     def test_to_dict_keys(self):
-        """Assert accuracy of keys inside dict"""
+        """Assert accuracy of keys."""
         obj_c = City()
         self.assertIn("__class__", obj_c.to_dict())
         self.assertIn("id", obj_c.to_dict())
@@ -78,7 +79,7 @@ class TestCity(unittest.TestCase):
         self.assertIn("updated_at", obj_c.to_dict())
 
     def test_to_dict_attributes(self):
-        """Assert attribute values within dict."""
+        """Assert attribute values."""
         obj_c = City()
         obj_c.name = "My First Model"
         obj_c.my_number = 89
@@ -86,7 +87,7 @@ class TestCity(unittest.TestCase):
         self.assertIn("my_number", obj_c.to_dict())
 
     def test_to_dict(self):
-        """Assert expected method output."""
+        """Assert expected to_dict() method output."""
         msg = "Unexpected output."""
         obj_c = City()
         obj_c.id = "74cb9cb3"
