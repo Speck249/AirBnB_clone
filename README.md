@@ -18,30 +18,30 @@ Clone this repository & proceed to run the console:
 
 Here's what you'll find in the repo:
 
-|           Modules             |                       Description                            |
-|-------------------------------|:-------------------------------------------------------------|
-| console.py                    | contains entry point of the command interpreter              |
-| models/amenity.py             | Handles amenity objects.                                     |
-| models/base_models.py         | Parent class defines all common attr/methods for subclasses. |
-| models/city.py                | Handles city objects.                                        |
-| models/place.py               | Handles place objects.                                       |
-| models/state.py               | Handles state objects.                                       |
-| models/review.py              | Handles review objects.                                      |
-| models/user.py                | Handles user objects.                                        |
-| models/engine/file_storage.py | Serializes/deserializes instances to & from JSON file.       |
-| tests/test_models/            | Contains all test cases for all classes.                     |
-| test_models/test_amenity.py   | Unit test suite for amenity subclass.                        |
-| test_base_class.py            | Unit test suite for base class.                              |
-| test_city.py                  | Unit test suite for city subclass.                           |
-| test_place.py                 | Unit test suite for place subclass.                          |
-| test_state.py                 | Unit test suite for state subclass.                          |
-| test_review.py                | Unit test suite for review subclass.                         |
-| test_user.py                  | Unit test suite for user subclass.                           |
-| test_file_storage.py          | Unit test suite for user subclass.                           |
+|           Modules                 |                       Description                            |
+|-----------------------------------|:-------------------------------------------------------------|
+| console.py                        | Contains entry point of the command interpreter              |
+| models/amenity.py                 | Handles amenity objects.                                     |
+| models/base_models.py             | Parent class defines all common attr/methods for subclasses. |
+| models/city.py                    | Handles city objects.                                        |
+| models/place.py                   | Handles place objects.                                       |
+| models/state.py                   | Handles state objects.                                       |
+| models/review.py                  | Handles review objects.                                      |
+| models/user.py                    | Handles user objects.                                        |
+| models/engine/file_storage.py     | Serializes/deserializes instances to & from JSON file.       |
+| tests/test_models/                | Contains all test cases for all classes.                     |
+| test_models/test_amenity.py       | Unit test suite for amenity subclass.                        |
+| test_models/test_base_class.py    | Unit test suite for base class.                              |
+| test_models/test_city.py          | Unit test suite for city subclass.                           |
+| test_models/test_place.py         | Unit test suite for place subclass.                          |
+| test_models/test_state.py         | Unit test suite for state subclass.                          |
+| test_models/test_review.py        | Unit test suite for review subclass.                         |
+| test_models/test_user.py          | Unit test suite for user subclass.                           |
+| test_models/test_file_storage.py  | Unit test suite for user subclass.                           |
 
 
 **HOW IT WORKS**: 
-After running the console module(console.py), the user will gain access to the command interpreter
+After running the console module (console.py), the user will gain access to the command interpreter
 either in **Interactive** or **Non-Interactive** mode. In interactive mode, the user will encounter a prompt - (hbnb)
 indicating the shell program is ready to accept input. In this case, the user is expected to insert the correct
 command which will invoke some action to be executed. Note that a new prompt will appear to accept user input until
