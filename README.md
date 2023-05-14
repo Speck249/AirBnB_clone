@@ -11,13 +11,14 @@ The Command Interpreter:
 Developed using the Python Cmd module, the command interpreter is a simple line-oriented
 CLI that acts mostly like a basic Shell for manipulating data without a visual interface.
 It is capable of five primary commands - Create | Show | Count | Update | Destroy.
+
 ## Console Usage
 Clone this repository & proceed to run the console:
 -- git clone https://github.com/.../AirBnB_clone.git
 
 Here's what you'll find in the repo:
 |           Modules                 |                       Description                           |
-| ----------------------------------|------------------------------------------------------------:|
+|-----------------------------------|:-----------------------------------------------------------:|
 | console.py                        | contains entry point of the command interpreter             |
 | models/amenity.py                 | Handles amenity objects.                                    |
 | base_models.py                    | Parent class defines all common attr/methods for subclasses.|
