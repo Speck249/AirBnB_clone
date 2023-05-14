@@ -3,7 +3,6 @@
 import uuid
 import models
 from datetime import datetime
-import time
 
 class BaseModel():
     """Empty class created."""
