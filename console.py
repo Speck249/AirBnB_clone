@@ -82,6 +82,9 @@ class HBNBCommand(cmd.Cmd):
         if token[0] not in HBNBCommand.__classes.keys():
             print("** class doesn't exist **")
             return
+        if len(token) <= 1:
+            print("** instance id missing **")
+            return
         storage.reload()
         all_obj = storage.all()
         key = token[0] + "." + token[1]
