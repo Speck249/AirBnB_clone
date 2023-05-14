@@ -17,7 +17,6 @@ class HBNBCommand(cmd.Cmd):
     """Empty class created.
     Class inherits from cmd.Cmd."""
 
-    intro = 'Welcome to the hbnb shell.'
     prompt = '(hbnb) '
 
     __classes = {
@@ -34,11 +33,11 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def emptyline(self):
-        """Overrides the emptyline"""
+        """Overrides the emptyline\n"""
         pass
 
     def do_create(self, line):
-        """Creates new instance of BaseModel."""
+        """Creates new instance of BaseModel.\n"""
 
         if not line:
             print("** class name missing **")
@@ -53,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, line):
         """Prints string representation
-        of an instance."""
+        of an instance.\n"""
         token = sh.split(line)
         if len(token) == 0:
             print("** class name missing **")
@@ -74,7 +73,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_destroy(self, line):
-        """Deletes an instance."""
+        """Deletes an instance.\n"""
 
         token = sh.split(line)
         if len(token) == 0:
@@ -94,7 +93,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, line):
         """Prints all string representation
-        of all instances."""
+        of all instances.\n"""
 
         storage.reload()
         obj_list = []
@@ -107,7 +106,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_update(self, line):
-        """Updates an instance."""
+        """Updates an instance.\n"""
 
         if not line:
             print("** class name missing **")
@@ -142,11 +141,11 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_EOF(self, line):
-        """Exits the program."""
+        """Exits the program.\n"""
         return True
 
     def do_quit(self, line):
-        """Exits the program."""
+        """Quit command to exit the program\n"""
         return True
 
 
