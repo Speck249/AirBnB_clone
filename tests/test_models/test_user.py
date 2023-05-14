@@ -46,6 +46,7 @@ class TestUser(unittest.TestCase):
         self.assertNotEqual(obj_u, u_obj)
 
     def test_save(self):
+        """Assert save() method output."""
         obj_u = User()
         time.sleep(0.12)
         initial_update = obj_u.updated_at
@@ -53,7 +54,7 @@ class TestUser(unittest.TestCase):
         self.assertLess(initial_update, obj_u.updated_at)
 
     def test_to_dict_keys(self):
-        """Assert accuracy of keys inside dict"""
+        """Assert accuracy of keys."""
         obj_u = User()
         self.assertIn("__class__", obj_u.to_dict())
         self.assertIn("id", obj_u.to_dict())
@@ -61,7 +62,7 @@ class TestUser(unittest.TestCase):
         self.assertIn("updated_at", obj_u.to_dict())
 
     def test_to_dict_attributes(self):
-        """Assert attribute values within dict."""
+        """Assert attribute values."""
         obj_u = User()
         obj_u.name = "My First Model"
         obj_u.my_number = 89
@@ -69,7 +70,7 @@ class TestUser(unittest.TestCase):
         self.assertIn("my_number", obj_u.to_dict())
 
     def test_to_dict(self):
-        """Assert expected method output."""
+        """Assert expected to_dict() method output."""
         msg = "Unexpected output."""
         obj_u = User()
         obj_u.id = "74cb9cb3"
