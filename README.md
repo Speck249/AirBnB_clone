@@ -7,7 +7,7 @@ The AirBnB project is geared towards building a copy of the official AirBnB webs
 Implmented in four phases, the first ('AirBnB clone') focuses on building a powerful 
 storage system along with a console. 
 
-The Command Interpreter:
+THE COMMAND INTERPRETER:
 Developed using the Python Cmd module, the command interpreter is a simple line-oriented
 CLI that functions as a basic Shell for manipulating data without a visual interface and 
 capable of five primary commands- Create | Show | Count | Update | Destroy.
@@ -39,7 +39,8 @@ Here's what you'll find in the repo:
 | test_user.py                  | Unit test suite for user subclass.                           |
 | test_file_storage.py          | Unit test suite for user subclass.                           |
 
-How it works: After running the console module(console.py), the user will gain access to the command interpreter
+**HOW IT WORKS**: 
+After running the console module(console.py), the user will gain access to the command interpreter
 either in **Interactive** or **Non-Interactive** mode. In interactive mode, the user will encounter a prompt - (hbnb)
 indicating the shell program is ready to accept input. In this case, the user is expected to insert the correct
 command which will invoke some action to be executed. Note that a new prompt will appear to accept user input until
@@ -61,10 +62,9 @@ Here are the commands of the command interpreter:
 | **destroy**  | Deletes an instance.                                |
 | **help**     | Returns information of a given command.             |
 | **EOF/quit** | Exits the program                                   |
+
 ## Tests
 ---
-##Developed with
-Ubuntu 14.04 & Python 3.4
 ## Authors
 Jeffrey Kirigo - jeffreykirigo75@gmail.com
 Rediet Kifle - redietkfle@gmail.com
