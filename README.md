@@ -3,14 +3,14 @@
 ![AirBnB Logo](/assets/AirBnB_logo.png "AirBnB Logo")
 ---
 ## Project Description
-The AirBnB project is geared towards building a copy of the official AirBnB website.
+This focus of this project is building a copy of the official AirBnB website.
 Implmented in four phases, the first ('AirBnB clone') focuses on building a powerful 
-storage system along with a console. 
+storage system along with a console for interacting with the web app. 
 
 THE COMMAND INTERPRETER:
 Developed using the Python Cmd module, the command interpreter is a simple line-oriented
 CLI that functions as a basic Shell for manipulating data without a visual interface and 
-capable of five primary commands- Create | Show | Count | Update | Destroy.
+capable of these commands- Create | Show | Count | Update | Destroy.
 
 ## Console Usage
 Clone this repository & proceed to run the console:
@@ -67,5 +67,5 @@ Here are the commands of the command interpreter:
 ## Tests
 ---
 ## Authors
-Jeffrey Kirigo | jeffreykirigo75@gmail.com
+Jeffrey Kirigo | jeffreykirigo75@gmail.com <br>
 Rediet Kifle | redietkfle@gmail.com
