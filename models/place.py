@@ -4,6 +4,7 @@ Place Class
 """
 from models.base_model import BaseModel
 
+
 class Place(BaseModel):
     """Class inherits from BaseModel.
     Handles Place Instances.

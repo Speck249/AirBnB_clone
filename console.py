@@ -91,7 +91,7 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, line):
         """Prints all string representation
         of all instances."""
-        
+
         storage.reload()
         obj_list = []
         all_obj = storage.all()
@@ -137,7 +137,6 @@ class HBNBCommand(cmd.Cmd):
             setattr(my_instance, token[2], token[3])
         storage.save()
 
-
     def do_EOF(self, line):
         """Exits the program."""
         return True
@@ -145,6 +144,7 @@ class HBNBCommand(cmd.Cmd):
     def do_quit(self, line):
         """Exits the program."""
         return True
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
