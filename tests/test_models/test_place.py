@@ -36,7 +36,6 @@ class TestPlace(unittest.TestCase):
         self.assertTrue(hasattr(self.obj, 'created_at'))
         self.assertTrue(hasattr(self.obj, 'updated_at'))
 
-
     def test_subclass_attribute_type(self):
         """Assert subclass attribute types."""
         self.assertIsInstance(self.obj.city_id, str)
@@ -61,6 +60,7 @@ class TestPlace(unittest.TestCase):
         self.assertNotEqual(obj_p, p_obj)
 
     def test_save(self):
+        """Assert save() method output."""
         obj_p = Place()
         time.sleep(0.12)
         initial_update = obj_p.updated_at
@@ -68,7 +68,7 @@ class TestPlace(unittest.TestCase):
         self.assertLess(initial_update, obj_p.updated_at)
 
     def test_to_dict_keys(self):
-        """Assert accuracy of keys inside dict"""
+        """Assert accuracy of keys."""
         obj_p = Place()
         self.assertIn("__class__", obj_p.to_dict())
         self.assertIn("id", obj_p.to_dict())
@@ -76,7 +76,7 @@ class TestPlace(unittest.TestCase):
         self.assertIn("updated_at", obj_p.to_dict())
 
     def test_to_dict_attributes(self):
-        """Assert attribute values within dict."""
+        """Assert attribute values."""
         obj_p = Place()
         obj_p.name = "My First Model"
         obj_p.my_number = 89
@@ -84,7 +84,7 @@ class TestPlace(unittest.TestCase):
         self.assertIn("my_number", obj_p.to_dict())
 
     def test_to_dict(self):
-        """Assert expected method output."""
+        """Assert expected to_dict() method output."""
         msg = "Unexpected output."""
         obj_p = Place()
         obj_p.id = "74cb9cb3"
@@ -100,6 +100,7 @@ class TestPlace(unittest.TestCase):
         }
 
         self.assertDictEqual(test_dict, obj_p.to_dict(), msg)
+
     def test_for_polymorphism(self):
         """Assert interchangeability between base & subclass."""
         b =  BaseModel()
@@ -114,3 +115,6 @@ class TestPlace(unittest.TestCase):
             place.longitude = "longitude type error"
         except Exception as e:
             assert isinstance(e, TypeError)
+
+if __name__ == '__main__':
+    unittest.main()
