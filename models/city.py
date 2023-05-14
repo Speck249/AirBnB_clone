@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-City Model
+City Class
 """
 from models.base_model import BaseModel
 
@@ -11,6 +11,6 @@ class City(BaseModel):
     Att:
         state_id (str): state Id
         name (str): City name
-
     """
+
     state_id, name = "", ""

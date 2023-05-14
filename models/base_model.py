@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """Module creates class BaseModel."""
 import uuid
-from datetime import datetime
-import time
 import models
+from datetime import datetime
 
 class BaseModel():
     """Empty class created."""
@@ -27,6 +26,7 @@ class BaseModel():
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """Method prints string representation."""
@@ -53,4 +53,3 @@ class BaseModel():
         dict_rep["updated_at"] = self.updated_at.isoformat()
 
         return dict_rep
-

@@ -6,8 +6,8 @@ from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-
-    """Amenity Instance
+    """Class inherits from BaseModel.
+    Handles Amenity Instance.
 
     Att:
         name (str): amenity name

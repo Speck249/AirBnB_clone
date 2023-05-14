@@ -6,7 +6,8 @@ from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """Review Instance
+    """Class inherits from BaseModel.
+    Handles review instance.
 
     Att:
         place_id (str): Place Id
