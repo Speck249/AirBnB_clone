@@ -39,6 +39,7 @@ Here's what you'll find in the repo:
 | test_user.py                  | Unit test suite for user subclass.                           |
 | test_file_storage.py          | Unit test suite for user subclass.                           |
 
+
 **HOW IT WORKS**: 
 After running the console module(console.py), the user will gain access to the command interpreter
 either in **Interactive** or **Non-Interactive** mode. In interactive mode, the user will encounter a prompt - (hbnb)
@@ -66,5 +67,5 @@ Here are the commands of the command interpreter:
 ## Tests
 ---
 ## Authors
-Jeffrey Kirigo - jeffreykirigo75@gmail.com
-Rediet Kifle - redietkfle@gmail.com
+Jeffrey Kirigo | jeffreykirigo75@gmail.com
+Rediet Kifle | redietkfle@gmail.com
