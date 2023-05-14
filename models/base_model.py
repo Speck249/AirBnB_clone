@@ -4,6 +4,7 @@ import uuid
 import models
 from datetime import datetime
 
+
 class BaseModel():
     """Empty class created."""
 
@@ -18,8 +19,8 @@ class BaseModel():
         if kwargs != {} and kwargs is not None:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
-                    self.__dict__[key] = datetime.strptime(value, \
-                            tformat)
+                    self.__dict__[key] = datetime.strptime(value,
+                                                           tformat)
                 else:
                     self.__dict__[key] = value
         else:
