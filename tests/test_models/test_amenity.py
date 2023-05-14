@@ -29,7 +29,7 @@ class TestAmenity(unittest.TestCase):
         self.assertTrue(hasattr(self.obj, 'created_at'))
 
     def test_updated_at_attribute_exists(self):
-        """Assert inherited attribute exist."""
+        """Assert inherited attribute is present."""
         self.assertTrue(hasattr(self.obj, 'updated_at'))
 
     def test_subclass_attribute_type(self):
@@ -54,7 +54,11 @@ class TestAmenity(unittest.TestCase):
         a_obj = Amenity()
         self.assertNotEqual(obj_a, a_obj)
 
+    def test__str__(self):
+        """Assert __str__ method output.""" 
+
     def test_save(self):
+        """Assert save() method output.""" 
         obj_a = Amenity()
         time.sleep(0.12)
         initial_update = obj_a.updated_at
@@ -62,7 +66,7 @@ class TestAmenity(unittest.TestCase):
         self.assertLess(initial_update, obj_a.updated_at)
 
     def test_to_dict_keys(self):
-        """Assert accuracy of keys inside dict"""
+        """Assert accuracy of keys."""
         obj_a = Amenity()
         self.assertIn("__class__", obj_a.to_dict())
         self.assertIn("id", obj_a.to_dict())
@@ -70,7 +74,7 @@ class TestAmenity(unittest.TestCase):
         self.assertIn("updated_at", obj_a.to_dict())
 
     def test_to_dict_attributes(self):
-        """Assert attribute values within dict."""
+        """Assert attribute values."""
         obj_a = Amenity()
         obj_a.name = "My First Model"
         obj_a.my_number = 89
@@ -78,7 +82,7 @@ class TestAmenity(unittest.TestCase):
         self.assertIn("my_number", obj_a.to_dict())
 
     def test_to_dict(self):
-        """Assert expected method output."""
+        """Assert expected to_dict() method output."""
         msg = "Unexpected output."""
         obj_a = Amenity()
         obj_a.id = "74cb9cb3"
