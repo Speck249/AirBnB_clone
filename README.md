@@ -49,8 +49,32 @@ the program is terminated.
 
 In non-interactive mode, there won't be any prompt to interact with. Instead, the user will
 pipe in his/her input and won't be prompted for a new input until another command is piped into program execution.
-For clear depiction of both modes, please refer to the 'Test' section of this file.
+For clear depiction of both modes, please refer to the 'Test' section of this file.  
 
+**Interactive mode**
+```
+~/ALX-C#11/AirBnB_clone$ echo "help" | ./console.py
+(hbnb) 
+Documented commands (type help <topic>):
+========================================
+EOF  all  count  create  destroy  help  quit  show  update
+
+```
+**Non-interactive mode**
+```
+~/ALX-C#11/AirBnB_clone$ ./console.py 
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  all  count  create  destroy  help  quit  show  update
+
+(hbnb) help quit
+Quit command to exit the program
+
+(hbnb) quit
+
+```
 Here are the commands of the command interpreter:
 
 |  **Methods** |          **Description**                            |
@@ -65,6 +89,15 @@ Here are the commands of the command interpreter:
 | **EOF/quit** | Exits the program                                   |
 
 ## Tests
+**unittest**
+```
+~/ALX-C#11/AirBnB_clone$ python3 -m unittest discover tests
+......................................................................................
+----------------------------------------------------------------------
+Ran 86 tests in 0.872s
+
+OK
+```
 ---
 ## Authors
 Jeffrey Kirigo | jeffreykirigo75@gmail.com <br>

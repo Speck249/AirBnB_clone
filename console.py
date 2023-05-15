@@ -17,6 +17,7 @@ class HBNBCommand(cmd.Cmd):
     """Empty class created.
     Class inherits from cmd.Cmd."""
 
+    intro = "Welcome to Kifle & Kirigo AirBnB Console\n"
     prompt = '(hbnb) '
 
     __classes = {
