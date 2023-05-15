@@ -87,7 +87,7 @@ class TestReview(unittest.TestCase):
 
     def test_for_polymorphism(self):
         """Assert interchangeability between base & subclass."""
-        b =  BaseModel()
+        b = BaseModel()
         assert isinstance(Review("Everything was perfect"), BaseModel)
         assert not isinstance(Review("Everything was perfect"), str)
         assert not isinstance(b, Review)
@@ -95,11 +95,12 @@ class TestReview(unittest.TestCase):
     def test_subclass_exceptions(self):
         """Assert exception handling."""
         review = Review("Everything was perfect, "
-                "would love to come again")
+                        "would love to come again")
         try:
             review.text = "text type error"
         except Exception as e:
             assert isinstance(e, TypeError)
+
 
 if __name__ == '__main__':
     unittest.main()
