@@ -106,7 +106,7 @@ class TestCity(unittest.TestCase):
 
     def test_for_polymorphism(self):
         """Assert interchangeability between base & subclass."""
-        b =  BaseModel()
+        b = BaseModel()
         assert isinstance(City("Albany"), BaseModel)
         assert not isinstance(City("Albany"), str)
         assert not isinstance(b, City)
@@ -118,6 +118,7 @@ class TestCity(unittest.TestCase):
             city.name = "name type error"
         except Exception as e:
             assert isinstance(e, TypeError)
+
 
 if __name__ == '__main__':
     unittest.main()

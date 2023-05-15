@@ -89,7 +89,7 @@ class TestUser(unittest.TestCase):
 
     def test_for_polymorphism(self):
         """Assert interchangeability between base & subclass."""
-        b =  BaseModel()
+        b = BaseModel()
         assert isinstance(User("john_doe@gmail.com"), BaseModel)
         assert not isinstance(User("john_doe@gmail.com"), str)
         assert not isinstance(b, User)
@@ -101,6 +101,7 @@ class TestUser(unittest.TestCase):
             user.password = "password type error"
         except Exception as e:
             assert isinstance(e, TypeError)
+
 
 if __name__ == '__main__':
     unittest.main()
