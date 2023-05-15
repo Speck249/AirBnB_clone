@@ -54,9 +54,6 @@ class TestAmenity(unittest.TestCase):
         a_obj = Amenity()
         self.assertNotEqual(obj_a, a_obj)
 
-    def test__str__(self):
-        """Assert __str__ method output.""" 
-
     def test_save(self):
         """Assert save() method output.""" 
         obj_a = Amenity()
