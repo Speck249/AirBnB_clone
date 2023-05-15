@@ -105,6 +105,13 @@ class HBNBCommand(cmd.Cmd):
             for key in all_obj:
                 obj_list.append(str(all_obj[key]))
             print(json.dumps(obj_list))
+            return
+        token = sh.split(line)
+        if token[0] in HBNBCommand.__classes.keys():
+            for key in all_obj:
+                if token[0] in key:
+                    obj_list.append(str(all_obj[key]))
+            print(json.dumps(obj_list))
         else:
             print("** class doesn't exist **")
 
