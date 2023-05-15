@@ -103,7 +103,7 @@ class TestPlace(unittest.TestCase):
 
     def test_for_polymorphism(self):
         """Assert interchangeability between base & subclass."""
-        b =  BaseModel()
+        b = BaseModel()
         assert isinstance(Place(73.756233), BaseModel)
         assert not isinstance(Place(73.756233), float)
         assert not isinstance(b, Place)
@@ -115,6 +115,7 @@ class TestPlace(unittest.TestCase):
             place.longitude = "longitude type error"
         except Exception as e:
             assert isinstance(e, TypeError)
+
 
 if __name__ == '__main__':
     unittest.main()

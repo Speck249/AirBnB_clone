@@ -55,7 +55,7 @@ class TestAmenity(unittest.TestCase):
         self.assertNotEqual(obj_a, a_obj)
 
     def test_save(self):
-        """Assert save() method output.""" 
+        """Assert save() method output."""
         obj_a = Amenity()
         time.sleep(0.12)
         initial_update = obj_a.updated_at
@@ -106,10 +106,11 @@ class TestAmenity(unittest.TestCase):
 
     def test_for_polymorphism(self):
         """Assert interchangeability between base & subclass."""
-        b =  BaseModel()
+        b = BaseModel()
         assert isinstance(Amenity("Hospitals"), BaseModel)
         assert not isinstance(Amenity("Hospitals"), str)
         assert not isinstance(b, Amenity)
+
 
 if __name__ == '__main__':
     unittest.main()

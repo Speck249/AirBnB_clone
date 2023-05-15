@@ -17,6 +17,7 @@ class HBNBCommand(cmd.Cmd):
     """Empty class created.
     Class inherits from cmd.Cmd."""
 
+    intro = "Welcome to Kifle & Kirigo AirBnB Console\n"
     prompt = '(hbnb) '
 
     __classes = {
@@ -105,6 +106,13 @@ class HBNBCommand(cmd.Cmd):
             for key in all_obj:
                 obj_list.append(str(all_obj[key]))
             print(json.dumps(obj_list))
+            return
+        token = sh.split(line)
+        if token[0] in HBNBCommand.__classes.keys():
+            for key in all_obj:
+                if token[0] in key:
+                    obj_list.append(str(all_obj[key]))
+            print(json.dumps(obj_list))
         else:
             print("** class doesn't exist **")
 
@@ -150,6 +158,52 @@ class HBNBCommand(cmd.Cmd):
     def do_quit(self, line):
         """Quit command to exit the program\n"""
         return True
+
+    def do_count(self, line):
+        """Count returns number of instance\n"""
+        count = 0
+        all_objs = storage.all()
+        for key in all_objs:
+            if line in key:
+                count += 1
+        print(count)
+
+    def default(self, arg):
+        val_dict = {
+            "all": self.do_all,
+            "count": self.do_count,
+            "show": self.do_show,
+            "destroy": self.do_destroy,
+            "update": self.do_update
+        }
+        arg = arg.strip()
+        values = arg.split(".")
+        if len(values) != 2:
+            cmd.Cmd.default(self, arg)
+            return
+        class_name = values[0]
+        command = values[1].split("(")[0]
+        line = ""
+        if (command == "update" and values[1].split("(")[1][-2] == "}"):
+            inputs = values[1].split("(")[1].split(",", 1)
+            inputs[0] = sh.split(inputs[0])[0]
+            line = "".join(inputs)[0:-1]
+            line = class_name + " " + line
+            self.do_update2(line.strip())
+            return
+        try:
+            inputs = values[1].split("(")[1].split(",")
+            for num in range(len(inputs)):
+                if (num != len(inputs) - 1):
+                    line = line + " " + sh.split(inputs[num])[0]
+                else:
+                    line = line + " " + sh.split(inputs[num][0:-1])[0]
+        except IndexError:
+            inputs = ""
+            line = ""
+        line = class_name + line
+        if (command in val_dict.keys()):
+            val_dict[command](line.strip())
 
 
 if __name__ == "__main__":

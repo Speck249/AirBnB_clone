@@ -17,7 +17,7 @@ class TestBaseModel(unittest.TestCase):
         ts = datetime.today()
         iso_ts = ts.isoformat()
         obj_b = BaseModel(id=unique_id, created_at=iso_ts,
-                  updated_at=iso_ts)
+                          updated_at=iso_ts)
         self.assertEqual(obj_b.id, unique_id)
         self.assertEqual(obj_b.created_at, ts)
         self.assertEqual(obj_b.updated_at, ts)
@@ -93,6 +93,7 @@ class TestBaseModel(unittest.TestCase):
         }
 
         self.assertDictEqual(test_dict, obj_b.to_dict(), msg)
+
 
 if __name__ == '__main__':
     unittest.main()
